@@ -1,11 +1,9 @@
 name: Build README
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 0 * * *' # Her gün gece yarısı çalışır
+  workflow_dispatch: # Manuel olarak da çalıştırılabilir
 
 jobs:
   build:
@@ -38,5 +36,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff-index --quiet HEAD || git commit -m "Update profile stats"
+          git diff-index --quiet HEAD || git commit -m "Update profile stats [skip ci]"
           git push
