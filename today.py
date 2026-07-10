@@ -11,7 +11,7 @@ import hashlib
 # Repository permissions: read:Commit statuses, read:Contents, read:Issues, read:Metadata, read:Pull Requests
 # Issues and pull requests permissions not needed at the moment, but may be used in the future
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
-USER_NAME = os.environ['firathdr'] # 'Andrew6rant'
+USER_NAME = os.environ['USER_NAME']
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'graph_commits': 0, 'loc_query': 0}
 
 
@@ -276,24 +276,7 @@ def flush_cache(edges, filename, comment_size):
             f.write(hashlib.sha256(node['node']['nameWithOwner'].encode('utf-8')).hexdigest() + ' 0 0 0 0\n')
 
 
-def add_archive():
-    """
-    Several repositories I have contributed to have since been deleted.
-    This function adds them using their last known data
-    """
-    with open('cache/repository_archive.txt', 'r') as f:
-        data = f.readlines()
-    old_data = data
-    data = data[7:len(data)-3] # remove the comment block    
-    added_loc, deleted_loc, added_commits = 0, 0, 0
-    contributed_repos = len(data)
-    for line in data:
-        repo_hash, total_commits, my_commits, *loc = line.split()
-        added_loc += int(loc[0])
-        deleted_loc += int(loc[1])
-        if (my_commits.isdigit()): added_commits += int(my_commits)
-    added_commits += int(old_data[-1].split()[4][:-1])
-    return [added_loc, deleted_loc, added_loc - deleted_loc, added_commits, contributed_repos]
+# add_archive fonksiyonu kaldırıldı (Andrew'a özel silinen repo verileri içeriyordu)
 
 def force_close_file(data, cache_comment):
     """
