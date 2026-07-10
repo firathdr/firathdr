@@ -339,9 +339,9 @@ def find_and_replace(root, element_id, new_text):
     """
     Finds the element in the SVG file and replaces its text with a new value
     """
-    element = root.find(f".//*[@id='{element_id}']")
-    if element is not None:
-        element.text = new_text
+    element = root.xpath(f".//*[@id='{element_id}']")
+    if element:
+        element[0].text = new_text
 
 
 def commit_counter(comment_size):
