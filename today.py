@@ -1,17 +1,23 @@
 import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from dateutil import relativedelta
 from lxml import etree
 
 
-BIRTHDAY = datetime.datetime(2003, 3, 3)
+BIRTHDAY = datetime.date(2003, 3, 3)
+PROFILE_TIMEZONE = ZoneInfo("Europe/Istanbul")
 SVG_FILES = (Path("dark_mode.svg"), Path("light_mode.svg"))
 
 
-def format_age(birthday: datetime.datetime, today: datetime.datetime | None = None) -> str:
+def profile_today() -> datetime.date:
+    return datetime.datetime.now(PROFILE_TIMEZONE).date()
+
+
+def format_age(birthday: datetime.date, today: datetime.date | None = None) -> str:
     """Return a human-readable age for the profile's uptime field."""
-    difference = relativedelta.relativedelta(today or datetime.datetime.today(), birthday)
+    difference = relativedelta.relativedelta(today or profile_today(), birthday)
     units = (
         (difference.years, "year"),
         (difference.months, "month"),
