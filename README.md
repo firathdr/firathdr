@@ -8,8 +8,8 @@
 
 <p align="center">
   <a href="https://firatyavas.com">Portfolio</a> &nbsp;&middot;&nbsp;
-  <a href="https://www.linkedin.com/in/f%C4%B1rat-y-b3bb03258/">LinkedIn</a> &nbsp;&middot;&nbsp;
-  <a href="mailto:firatyavas@proton.me">Email</a>
+  <a href="https://www.linkedin.com/in/firat-yavas">LinkedIn</a> &nbsp;&middot;&nbsp;
+  <a href="mailto:firatyavas12@gmail.com">Email</a>
 </p>
 
 <picture>
@@ -52,4 +52,4 @@ Concentrating on data-driven AI, computer vision, and practical machine learning
 
 ## Let's Connect
 
-I am open to internships, ML/CV engineering opportunities, and collaborations on useful AI products. The best way to reach me is at [firatyavas@proton.me](mailto:firatyavas@proton.me).
+I am open to internships, ML/CV engineering opportunities, and collaborations on useful AI products. The best way to reach me is at [firatyavas12@gmail.com](mailto:firatyavas12@gmail.com).
